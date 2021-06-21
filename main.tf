@@ -39,7 +39,7 @@ locals {
     source = "10.0.0.0/8"
     destination = "166.8.0.0/14"
   }]
-  acl_rules = concat(local.default_acl_rules, var.acl_rules)
+  acl_rules = var.override_defautl_acl ? var.acl_rules : concat(local.default_acl_rules, var.acl_rules)
 }
 
 resource null_resource print_names {

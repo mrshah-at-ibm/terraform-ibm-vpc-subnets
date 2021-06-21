@@ -88,3 +88,9 @@ variable "acl_rules" {
   description = "List of rules to set on the subnet access control list"
   default = []
 }
+
+variable "override_defautl_acl" {
+  type = bool
+  description = "(Optional) to override the default ACL with the provided ACL value"
+  default = false
+}
